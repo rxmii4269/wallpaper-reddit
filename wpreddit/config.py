@@ -42,7 +42,7 @@ def init_config():
         walldir = os.path.expanduser("~/Wallpaper-Reddit")
         confdir = os.path.expanduser("~/Wallpaper-Reddit/config")
     else:
-        walldir = os.path.expanduser("~/.wallpaper")
+        walldir = os.path.expanduser("~/Pictures/Wallpapers")
         confdir = os.path.expanduser("~/.config/wallpaper-reddit")
     if not os.path.exists(walldir):
         os.makedirs(walldir)

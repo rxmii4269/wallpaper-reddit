@@ -14,13 +14,7 @@ def set_wallpaper():
         ctypes.windll.user32.SystemParametersInfoW(0x14, 0, config.walldir + "\\wallpaper.bmp", 0x3)
     elif config.opsys == "Darwin":
         path = os.path.expanduser(config.walldir + "/wallpaper.jpg")
-        try:
-            check_call(["sqlite3", "~/Library/Application Support/Dock/desktoppicture.db", "\"update",
-                                   "data", "set", "value", "=", "'%s'\"" % path])
-            check_call(["killall", "dock"])
-        except CalledProcessError or FileNotFoundError:
-            print("Setting wallpaper failed.  Ensure all dependencies listen in the README are installed.")
-            sys.exit(1)
+        os.system("desktoppr ~/Pictures/Wallpapers/wallpaper.jpg")
     else:
         linux_wallpaper()
     print("wallpaper set command was run")

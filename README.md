@@ -1,28 +1,33 @@
 # NOTICE  
-I have not recently had the time to maintain and bug fix this project. I am seeking for a developer that is willing to maintain this project and potentially implement new features. Please reach out to me at mkubiak.dev at gmail dot com if you are interested in assisting with the project and have experience with Python.  
+This was a fork from https://github.com/markubiak/wallpaper-reddit - I have updated the Mac OS section to be compatible with the latest versions. I will also be expanding Linux documentation. 
 
-# wallpaper-reddit
 ## About
 wallpaper-reddit is a Python 3 program that sets your wallpaper to the top image of one or multiple subreddits.  Version 3 has introduced many changes, such as the removal of all external dependencies, automatic DE detection for wallpaper setting, and proper setup using setuptools.  
 
 ## Installation
-RPMs for Fedora 23, Fedora 24, Ubuntu 16.04/Linux Mint 18 can be found on the [Releases Page] (https://github.com/markubiak/wallpaper-reddit/releases)  
-
-Users of Ubuntu derivatives <16.04 will have to build from source, as the version of PIL shipped with those versions of Ubuntu is outdated.  
 
 Arch users can get the package from the [AUR](https://aur.archlinux.org/packages/wallpaper-reddit-git/)  
 
-From Source:  
-1.) Install Pillow 3.x or the libraries necessary to compile it from scratch if the distribution you're using does not package it:  
-   - Ubuntu <16.04/Linux Mint 17/ElementaryOS: `sudo apt-get install python3-dev python3-setuptools libjpeg8-dev zlib1g-dev libfreetype6-dev`  
+### Install Dependancies  
+   - Ubuntu/Linux Mint/ElementaryOS: `sudo apt-get install python3-dev python3-setuptools libjpeg8-dev zlib1g-dev libfreetype6-dev`  
    - Fedora: `sudo dnf install python3-imaging` (installed by default)  
    - Arch: `sudo pacman -S python-pillow`  
-   - Mac OS X El Capitan: 
+   - Mac OS X: (Tested on High Sierra/Mojave/Catalina)
     * `xcode-select --install`  
+    * `sudo easy_install pip`
+    * `sudo pip install --upgrade pip`
     * `pip install pillow`  
+    * Older Mac Requirements (High Sierra 10.13 or earlier) - Install Swift Tools - https://support.apple.com/kb/DL1998
+    * Desktop Script PKG Needed for Changing MacOS Wallpaper - https://github.com/scriptingosx/desktoppr/releases
+        - *Note: This is needed since MacOS keeps changing how to set wallpapers from sqlite db to new way in Mojave or Greater.*
 
-2.) Clone the repository and navigate into the directory with the setup.py file.  
-3.) Run `sudo python3 setup.py install`  
+### Install Program  
+```
+cd ~
+git clone https://github.com/ChrisTitusTech/wallpaper-reddit.git
+cd wallpaper-reddit
+sudo python3 setup.py install
+```
 
 ## Usage
 The script is very simple to use.  Simply type:  
