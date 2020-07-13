@@ -1,51 +1,9 @@
 # NOTICE  
 This was a fork from https://github.com/markubiak/wallpaper-reddit - I have updated the Mac OS section to be compatible with the latest versions. I will also be expanding Linux documentation. 
 
-## About
-wallpaper-reddit is a Python 3 program that sets your wallpaper to the top image of one or multiple subreddits.  Version 3 has introduced many changes, such as the removal of all external dependencies, automatic DE detection for wallpaper setting, and proper setup using setuptools.  
+## How-To Guide located with @ https://christitus.com/change-wallpaper/
 
-## Installation
-
-Arch users can get the package from the [AUR](https://aur.archlinux.org/packages/wallpaper-reddit-git/)  
-
-### Install Dependancies  
-   - Ubuntu/Linux Mint/ElementaryOS: `sudo apt-get install python3-dev python3-setuptools libjpeg8-dev zlib1g-dev libfreetype6-dev`  
-   - Fedora: `sudo dnf install python3-imaging` (installed by default)  
-   - Arch: `sudo pacman -S python-pillow`  
-   - Mac OS X: (Tested on High Sierra/Mojave/Catalina)
-    * `xcode-select --install`  
-    * `sudo easy_install pip`
-    * `sudo pip install --upgrade pip`
-    * `pip install pillow`  
-    * Older Mac Requirements (High Sierra 10.13 or earlier) - Install Swift Tools - https://support.apple.com/kb/DL1998
-    * Desktop Script PKG Needed for Changing MacOS Wallpaper - https://github.com/scriptingosx/desktoppr/releases
-        - *Note: This is needed since MacOS keeps changing how to set wallpapers from sqlite db to new way in Mojave or Greater.*
-
-### Install Program  
-```
-cd ~
-git clone https://github.com/ChrisTitusTech/wallpaper-reddit.git
-cd wallpaper-reddit
-sudo python3 setup.py install
-```
-
-## Usage
-The script is very simple to use.  Simply type:  
-
-  `wallpaper-reddit [subreddits]`  
-  
-If no subreddits are specified, the script will default to the top image from the subs section of the config file.  There are many, many more options, all of which you can see by typing:  
-
-  `wallpaper-reddit --help`  
-
-## Configuration  
-The config file is in `~/.config/wallpaper-reddit`, and will be created automatically.  Currently, the GNOME, XFCE, MATE, Unity, and Cinnamon Desktop Environments should be automatically detected and the program should set the wallpaper without any extra work.  However, due to the varying nature of window managers, it is possible, even likely, that you may have to specify a custom command to set your wallpaper.  The program will prompt you for this if this is the case; the exact command can be researched per desktop environment.  If your desktop environment is not supported, please file an issue so that automatic support can be implemented for others.  
-### Config Options:  
-- `minwidth` and `minheight` set the minimum dimensions the program will consider a valid candidate for a wallpaper.  If `--resize` is enabled, the script will resize the image to those dimensions before setting the wallpaper.
-- `minratio` is the minimal aspect ratio of the image. It is a float value of width/height of the image, for example 1.6 for 16:9 image.
-- `maxlinks` is the maximum number of links the script will go through before giving up.
-- `resize` does the same thing as the `--resize` flag.  It is enabled by default.
-- `random` does the same thing as the `--random` flag.
+# Extra Commands not in guide
 
 ## Overlay Titles
 The program has an option to overlay the title of the image directly onto the image itself, so using conky to constantly read the title of the image from `~/.wallpaper/title.txt` is no longer necessary (although it still works, and is recommended if not using the "resize" option).  This function is not enabled by default, but it can be enabled with either the `--settitle` command line flag or more permanently in the config under the `[Title Overlay]` section. There are five options for setting titles: size, x/y alignment, and x/y offset.  
